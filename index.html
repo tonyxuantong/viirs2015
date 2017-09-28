@@ -46,13 +46,16 @@
     var baseLayers = {
 		'GreyBaseMap': L.tileLayer('http://map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetPurplishBlue/MapServer/tile/{z}/{y}/{x}'),
    
-        'DarkGrey Basemap': L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}').addTo(map),
+        'DarkGrey Basemap': L.tileLayer('https://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}'),
 
 		'Satellite Imagery': L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'),
 
 		'Topographic Map': L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}'),
 				
-		'Transportation Map': L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}')
+		'Transportation Map': L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer/tile/{z}/{y}/{x}'),
+		
+		'Nighttime Light': L.tileLayer('https://tiles.arcgis.com/tiles/P3ePLMYs2RVChkJx/arcgis/rest/services/Earth_at_Night_WM/MapServer/tile/{z}/{y}/{x}').addTo(map)
+		
     };
 	
     var layercontrol = L.control.layers(baseLayers,{}, {
@@ -1529,9 +1532,9 @@ var convertData = function (data) {
 option = {
     // backgroundColor: '#404a59',
     title: {
-        text: 'Subnational GDP of Africa 2015',
+        text: 'Subnational GDP of Africa 2015 based on Nighttime Light',
         subtext: 'Data from SUOMI-NPP VIIRS',
-        sublink: 'du.com',
+        sublink: 'https://ngdc.noaa.gov/eog/viirs/download_dnb_composites.html',
         left: 'center',
         textStyle: {
             color: '#fff'
